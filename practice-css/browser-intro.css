@@ -1,3 +1,9 @@
+p.info {
+  background-color: #dfdfdf;
+}
+p.info {
+  font-size:small;
+}
 p {
 	color: navy;
 }
@@ -5,9 +11,13 @@ p {
 p.info {
 	font-size: 10pt;
 }
-
-h1 {
-	background-color: #7f7fcf;
+h1{
+  text-shadow:
+    1px 1px 2px white,
+    0 0 1em navy,
+    0 0 0.2em navy;
+  color: white;
+  font:"";
 }
 
 h2 {
