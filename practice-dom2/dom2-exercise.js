@@ -1,5 +1,4 @@
 //////////////// ここは書き換えてはいけない！ 
-
 let campus = {
 	address: "八王子市館町",
 	buildingD: ["D101", "D102", "D103", "D201", "D202", "D203", "D204", "D205"],
@@ -15,4 +14,23 @@ let gakka = [
 ];
 
 //////////////// ここから下にプログラムを書きたそう!
+function show() {
+	let p = document.createElement('p');
+p.textContent = campus.address;
 
+let d = document.querySelector('h2#addr');
+d.insertAdjacentElement('afterend', p);
+
+let u = document.createElement('ul');
+
+for(let n of gakka){
+  let l = document.createElement('li');
+    l.textContent = n.name;
+    u.insertAdjacentElement('beforeend', l);
+}
+
+let h = document.querySelector('h2#dept');
+h.insertAdjacentElement('afterend', u); 
+}
+let b = document.querySelector('button#show');
+b.addEventListener('click', show);
