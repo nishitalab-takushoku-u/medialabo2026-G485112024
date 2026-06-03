@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>グルメ情報検索</title>
+
+<style>
+
+body{
+    font-family: "Yu Gothic", sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #eef2f7);
+    margin: 0;
+    padding: 30px;
+}
+
+h1{
+    text-align: center;
+    color: #ff7b00;
+    margin-bottom: 30px;
+}
+
+.search-area{
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+select{
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+button{
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #ff7b00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover{
+    background: #e66d00;
+}
+
+#result{
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.shop{
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.shop img{
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.shop h2{
+    color: #ff7b00;
+}
+
+.shop a{
+    display: inline-block;
+    background: #ff7b00;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.shop a:hover{
+    background: #e66d00;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🍴 グルメ情報検索</h1>
+
+<div class="search-area">
+
+<select id="genre">
+    <option value="G001">🍺 居酒屋</option>
+    <option value="G002">🍷 ダイニングバー・バル</option>
+    <option value="G003">🍳 創作料理</option>
+    <option value="G004">🍣 和食</option>
+    <option value="G005">🍴 洋食</option>
+    <option value="G006">🍝 イタリアン・フレンチ</option>
+    <option value="G007">🥟 中華</option>
+    <option value="G008">🥩 焼肉・ホルモン</option>
+    <option value="G009">🌶️ アジア・エスニック料理</option>
+    <option value="G010">🌍 各国料理</option>
+    <option value="G011">🎤 カラオケ・パーティ</option>
+    <option value="G012">🍸 バー・カクテル</option>
+    <option value="G013">🍜 ラーメン</option>
+    <option value="G014">☕ カフェ・スイーツ</option>
+    <option value="G015">🍽️ その他グルメ</option>
+    <option value="G016">🥞 お好み焼き・もんじゃ</option>
+    <option value="G017">🇰🇷 韓国料理</option>
+</select>
+
+<button onclick="searchGourmet()">検索</button>
+
+</div>
+
+<div id="result">
+検索したジャンルのお店がここに表示されます
+</div>
+
+<script>
+
+function searchGourmet() {
+
+    const genre = document.querySelector("#genre").value;
+
+    const url =
+        `https://www.nishita-lab.org/web-contents/jsons/hotpepper/${genre}.json`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+            const result = document.querySelector("#result");
+            result.innerHTML = "";
+
+            const shops = data.results.shop;
+
+            for(const shop of shops){
+
+                result.insertAdjacentHTML(
+                    "beforeend",
+                    `
+                    <div class="shop">
+
+                        <h2>${shop.name}</h2>
+
+                        <img src="${shop.photo.pc.l}"
+                             alt="${shop.name}">
+
+                        <p><strong>ジャンル：</strong>
+                        ${shop.genre.name}</p>
+
+                        <p><strong>住所：</strong>
+                        ${shop.address}</p>
+
+                        <p><strong>営業時間：</strong>
+                        ${shop.open}</p>
+
+                        <p><strong>キャッチコピー：</strong>
+                        ${shop.catch}</p>
+
+                        <a href="${shop.urls.pc}"
+                           target="_blank">
+                           ホットペッパーで見る
+                        </a>
+
+                    </div>
+                    `
+                );
+            }
+        })
+
+        .catch(error => {
+
+            document.querySelector("#result").innerHTML =
+                "<p>データの取得に失敗しました。</p>";
+
+            console.error(error);
+        });
+}
+
+</script>
+
+</body>
+</html>
