@@ -1,57 +1,147 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <title>Webコンテンツ作成の成果</title>
-  <link rel="stylesheet" href="project.css">
+<meta charset="UTF-8">
+<title>Webコンテンツ作成の成果</title>
+
+<style>
+body {
+    font-family: "Yu Gothic", sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #f8f9fa);
+    margin: 0;
+    padding: 40px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #5f69f8, #aa56d7);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: #2d109f;
+    border-left: 6px solid #00b3ff;
+    padding-left: 12px;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(135deg, #0099f1, #0099f1);
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #4af8f0, #ffffff);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    background: #f8f9fa;
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    border-left: 5px solid #8c00ff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    background: #fff3e0;
+    transform: translateX(5px);
+}
+
+li a {
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+li a:hover {
+    color: #ff6f00;
+}
+</style>
+
 </head>
 
 <body>
 
-    <h1>「Webコンテンツ作成」の成果</h1>
+<h1>Webコンテンツ作成の成果</h1>
 
+<div class="section">
     <h2>本テーマについて</h2>
-    <p>学習目的と目標</p>
+<p>
+本テーマでは、HTML・CSS・JavaScriptを用いたWebページ制作の基礎を学び、
+利用者にとって分かりやすく使いやすいWebコンテンツを作成することを目的とした。
+また、イベント処理やDOM操作、外部データ（JSON）の利用方法を学び、
+動的なWebアプリケーションを設計・実装できる力を身に付けることを目標とした。
+</p>
+</div>
 
+<div class="section">
     <h2>プロジェクト課題について</h2>
-    <div class="card">
-        <a href="project.html">グルメ</a>
-        <p>プロジェクト課題</p>
-    </div>
 
+    <a href="project.html" class="button">
+        グルメ検索サイト
+    </a>
+
+    <p>JavaScriptとJSONを利用したグルメ検索システムを作成した。</p>
+</div>
+
+<div class="section">
     <h2>数当てゲーム</h2>
-    <div class="card">
-        <a href="kazuate.html">数当てゲーム</a>
-        <p>第3回で取り組む概要の説明</p>
-    </div>
 
+    <a href="kazuate.html" class="button">
+        数当てゲーム
+    </a>
+
+    <p>JavaScriptの条件分岐とイベント処理を学習した。</p>
+</div>
+
+<div class="section">
     <h2>各授業の学習事項</h2>
 
-    <div class="card">
-        <h3>第1回 WWWとHTML</h3>
-        <p>今回学習した事柄</p>
-        <a href="practice-html/elements.html">演習1-4</a>
-    </div>
-
-    <div class="card">
-        <h3>第2回 CSSによるWebページの装飾</h3>
-        <a href="practice-css/browser-intro.html">演習2-3</a>
-    </div>
-
-    <div class="card">
-        <h3>第3回 JavaScriptの基本</h3>
-        <a href="practice-js/obj-practice.html">演習3-6</a>
-    </div>
-
-    <div class="card">
-        <h3>第4回 DOMとJavaScript</h3>
-        <a href="practice-eventdom/tashizan.html">演習4-10</a>
-    </div>
-
-    <div class="card">
-        <h3>第5回 イベント処理</h3>
-        <a href="practice-dom2/dom2-exercise.html">演習5-7</a>
-    </div>
+    <ul>
+        <li><a href="practice-html/elements.html">第1回 WWWとHTML</a></li>
+        <li><a href="practice-css/browser-intro.html">第2回 CSSによるWebページの装飾</a></li>
+        <li><a href="practice-js/obj-practice.html">第3回 JavaScriptの基本</a></li>
+        <li><a href="practice-eventdom/tashizan.html">第4回 DOMとJavaScript</a></li>
+        <li><a href="practice-dom2/dom2-exercise.html">第5回 イベント処理</a></li>
+    </ul>
+</div>
 
 </body>
 </html>
