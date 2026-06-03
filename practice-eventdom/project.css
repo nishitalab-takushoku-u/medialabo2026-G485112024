@@ -1,60 +1,56 @@
-/* ページ全体 */
 body {
     font-family: "Yu Gothic", sans-serif;
     background-color: #f4f6f9;
     margin: 0;
     padding: 30px;
-    color: #333;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* メインタイトル */
 h1 {
     text-align: center;
     background-color: #3498db;
     color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
 }
 
-/* 見出し */
 h2 {
     margin-top: 40px;
-    padding: 10px;
-    border-left: 8px solid #3498db;
-    background-color: white;
-    border-radius: 5px;
-}
-
-/* 小見出し */
-h3 {
+    border-left: 6px solid #3498db;
+    padding-left: 10px;
     color: #2c3e50;
-    margin-top: 25px;
 }
 
-/* 説明文 */
+h3 {
+    margin-top: 0;
+    color: #34495e;
+}
+
 p {
-    margin-left: 15px;
+    line-height: 1.7;
 }
 
-/* リンク */
+.card {
+    background: white;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
 a {
     display: inline-block;
-    margin: 8px 0;
-    padding: 8px 15px;
     background-color: #3498db;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    padding: 10px 18px;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
-/* マウスを乗せた時 */
 a:hover {
     background-color: #2980b9;
     transform: translateY(-2px);
-}
-
-/* リスト */
-li {
-    list-style: none;
 }
