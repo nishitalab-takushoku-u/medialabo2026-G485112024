@@ -1,58 +1,60 @@
-
+/* ページ全体 */
 body {
     font-family: "Yu Gothic", sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.8;
+    background-color: #f4f6f9;
     margin: 0;
-    padding: 0;
+    padding: 30px;
+    color: #333;
 }
 
-
-main {
-    width: 80%;
-    max-width: 1000px;
-    margin: 30px auto;
-    background-color: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
+/* メインタイトル */
 h1 {
     text-align: center;
-    color: #2c3e50;
-    border-bottom: 4px solid #3498db;
-    padding-bottom: 10px;
-}
-
-h2 {
-    margin-top: 50px;
-    color: #34495e;
-    border-left: 8px solid #3498db;
-    padding-left: 12px;
-}
-
-h3 {
-    color: #555;
-}
-
-a {
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-}
-
-a:hover {
-    color: #e74c3c;
-    text-decoration: underline;
-}
-
-.section {
-    background-color: #ffffff;
-    margin: 20px 0;
+    background-color: #3498db;
+    color: white;
     padding: 20px;
-    border-left: 5px solid #3498db;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 10px;
+}
+
+/* 見出し */
+h2 {
+    margin-top: 40px;
+    padding: 10px;
+    border-left: 8px solid #3498db;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* 小見出し */
+h3 {
+    color: #2c3e50;
+    margin-top: 25px;
+}
+
+/* 説明文 */
+p {
+    margin-left: 15px;
+}
+
+/* リンク */
+a {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* マウスを乗せた時 */
+a:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* リスト */
+li {
+    list-style: none;
 }
